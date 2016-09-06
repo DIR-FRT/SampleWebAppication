@@ -1,0 +1,9 @@
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/model/AppUser.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/repository/RoleRepository.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/service/UserService.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/validator/UserValidator.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/model/Role.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/repository/UserRepository.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/web/UserController.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/service/UserDetailsServiceImpl.java
+/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java/fpt/dir/sampleweb/service/UserServiceImpl.java
