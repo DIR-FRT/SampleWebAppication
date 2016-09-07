@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.323943661971831" branch-rate="0.02631578947368421" lines-covered="46" lines-valid="142" branches-covered="1" branches-valid="38" complexity="1.3174603174603174" version="1.9.4.1" timestamp="1472737332529">
+<coverage line-rate="0.3262411347517731" branch-rate="0.02631578947368421" lines-covered="46" lines-valid="141" branches-covered="1" branches-valid="38" complexity="1.3174603174603174" version="1.9.4.1" timestamp="1473175520352">
 	<sources>
 		<source>--source</source>
 		<source>/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/src/main/java</source>
@@ -13,28 +13,28 @@
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="24" hits="27" branch="false"/>
-								<line number="31" hits="27" branch="false"/>
+								<line number="24" hits="31" branch="false"/>
+								<line number="31" hits="31" branch="false"/>
 							</lines>
 						</method>
 						<method name="getActive" signature="()Ljava/lang/Boolean;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="162" hits="13" branch="false"/>
+								<line number="162" hits="21" branch="false"/>
 							</lines>
 						</method>
 						<method name="getEmail" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="143" hits="13" branch="false"/>
+								<line number="143" hits="21" branch="false"/>
 							</lines>
 						</method>
 						<method name="getId" signature="()Ljava/lang/Long;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="43" hits="19" branch="false"/>
+								<line number="43" hits="23" branch="false"/>
 							</lines>
 						</method>
 						<method name="getPassword" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="81" hits="13" branch="false"/>
+								<line number="81" hits="21" branch="false"/>
 							</lines>
 						</method>
 						<method name="getPasswordConfirm" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -44,36 +44,36 @@
 						</method>
 						<method name="getRoles" signature="()Ljava/util/Set;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="124" hits="13" branch="false"/>
+								<line number="124" hits="21" branch="false"/>
 							</lines>
 						</method>
 						<method name="getUsername" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="62" hits="15" branch="false"/>
+								<line number="62" hits="23" branch="false"/>
 							</lines>
 						</method>
 						<method name="setActive" signature="(Ljava/lang/Boolean;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="171" hits="19" branch="false"/>
-								<line number="172" hits="19" branch="false"/>
+								<line number="171" hits="23" branch="false"/>
+								<line number="172" hits="23" branch="false"/>
 							</lines>
 						</method>
 						<method name="setEmail" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="152" hits="25" branch="false"/>
-								<line number="153" hits="25" branch="false"/>
+								<line number="152" hits="29" branch="false"/>
+								<line number="153" hits="29" branch="false"/>
 							</lines>
 						</method>
 						<method name="setId" signature="(Ljava/lang/Long;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="52" hits="18" branch="false"/>
-								<line number="53" hits="18" branch="false"/>
+								<line number="52" hits="22" branch="false"/>
+								<line number="53" hits="22" branch="false"/>
 							</lines>
 						</method>
 						<method name="setPassword" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="90" hits="25" branch="false"/>
-								<line number="91" hits="25" branch="false"/>
+								<line number="90" hits="29" branch="false"/>
+								<line number="91" hits="29" branch="false"/>
 							</lines>
 						</method>
 						<method name="setPasswordConfirm" signature="(Ljava/lang/String;)V" line-rate="0.0" branch-rate="1.0">
@@ -84,41 +84,41 @@
 						</method>
 						<method name="setRoles" signature="(Ljava/util/Set;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="133" hits="10" branch="false"/>
-								<line number="134" hits="10" branch="false"/>
+								<line number="133" hits="14" branch="false"/>
+								<line number="134" hits="14" branch="false"/>
 							</lines>
 						</method>
 						<method name="setUsername" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="71" hits="25" branch="false"/>
-								<line number="72" hits="25" branch="false"/>
+								<line number="71" hits="29" branch="false"/>
+								<line number="72" hits="29" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="24" hits="27" branch="false"/>
-						<line number="31" hits="27" branch="false"/>
-						<line number="43" hits="19" branch="false"/>
-						<line number="52" hits="18" branch="false"/>
-						<line number="53" hits="18" branch="false"/>
-						<line number="62" hits="15" branch="false"/>
-						<line number="71" hits="25" branch="false"/>
-						<line number="72" hits="25" branch="false"/>
-						<line number="81" hits="13" branch="false"/>
-						<line number="90" hits="25" branch="false"/>
-						<line number="91" hits="25" branch="false"/>
+						<line number="24" hits="31" branch="false"/>
+						<line number="31" hits="31" branch="false"/>
+						<line number="43" hits="23" branch="false"/>
+						<line number="52" hits="22" branch="false"/>
+						<line number="53" hits="22" branch="false"/>
+						<line number="62" hits="23" branch="false"/>
+						<line number="71" hits="29" branch="false"/>
+						<line number="72" hits="29" branch="false"/>
+						<line number="81" hits="21" branch="false"/>
+						<line number="90" hits="29" branch="false"/>
+						<line number="91" hits="29" branch="false"/>
 						<line number="101" hits="0" branch="false"/>
 						<line number="110" hits="0" branch="false"/>
 						<line number="111" hits="0" branch="false"/>
-						<line number="124" hits="13" branch="false"/>
-						<line number="133" hits="10" branch="false"/>
-						<line number="134" hits="10" branch="false"/>
-						<line number="143" hits="13" branch="false"/>
-						<line number="152" hits="25" branch="false"/>
-						<line number="153" hits="25" branch="false"/>
-						<line number="162" hits="13" branch="false"/>
-						<line number="171" hits="19" branch="false"/>
-						<line number="172" hits="19" branch="false"/>
+						<line number="124" hits="21" branch="false"/>
+						<line number="133" hits="14" branch="false"/>
+						<line number="134" hits="14" branch="false"/>
+						<line number="143" hits="21" branch="false"/>
+						<line number="152" hits="29" branch="false"/>
+						<line number="153" hits="29" branch="false"/>
+						<line number="162" hits="21" branch="false"/>
+						<line number="171" hits="23" branch="false"/>
+						<line number="172" hits="23" branch="false"/>
 					</lines>
 				</class>
 				<class name="fpt.dir.sampleweb.model.Role" filename="fpt/dir/sampleweb/model/Role.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
@@ -560,8 +560,7 @@
 								</line>
 								<line number="234" hits="0" branch="false"/>
 								<line number="236" hits="0" branch="false"/>
-								<line number="238" hits="0" branch="false"/>
-								<line number="242" hits="0" branch="false"/>
+								<line number="240" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="deleteUser" signature="(JLorg/springframework/ui/Model;)Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
@@ -705,8 +704,7 @@
 						</line>
 						<line number="234" hits="0" branch="false"/>
 						<line number="236" hits="0" branch="false"/>
-						<line number="238" hits="0" branch="false"/>
-						<line number="242" hits="0" branch="false"/>
+						<line number="240" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>

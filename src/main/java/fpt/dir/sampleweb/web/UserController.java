@@ -90,11 +90,6 @@ public class UserController {
    */
   @RequestMapping(value = "/login", method = RequestMethod.GET)
   public String login(Model model, String error, String logout) {
-    
-    AppUser user = null;
-    String email;
-
-    email = user.getEmail();
 
     if (error != null) {
       

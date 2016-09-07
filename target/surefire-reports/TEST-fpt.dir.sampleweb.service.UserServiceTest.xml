@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fpt.dir.sampleweb.service.UserServiceTest" time="0.073" tests="7" errors="0" skipped="0" failures="0">
+<testsuite name="fpt.dir.sampleweb.service.UserServiceTest" time="0.082" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="JOB_NAME" value="02.Unit Test"/>
+    <property name="JOB_NAME" value="01.Analyze Code"/>
     <property name="PWD" value="/var/www/redmine"/>
     <property name="JRUBY_HOME" value="/home/TranTTB/jruby-1.6.7/bin"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
@@ -16,10 +16,10 @@
     <property name="EXECUTOR_NUMBER" value="0"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="POM_DISPLAYNAME" value="SampleWebApplication"/>
+    <property name="net.sourceforge.cobertura.datafile" value="/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/target/cobertura/cobertura.ser"/>
     <property name="NODE_LABELS" value="master"/>
     <property name="SSH_ASKPASS" value="/usr/libexec/openssh/gnome-ssh-askpass"/>
     <property name="java.runtime.version" value="1.7.0_80-b15"/>
-    <property name="UTResultLocation" value="/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/target/surefire-reports"/>
     <property name="ANT_HOME" value="/home/TranTTB/apache-ant-1.9.7"/>
     <property name="user.name" value="root"/>
     <property name="SSH_CONNECTION" value="10.133.32.68 57263 10.133.32.55 22"/>
@@ -27,8 +27,8 @@
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
     <property name="SSH_CLIENT" value="10.133.32.68 57263 22"/>
     <property name="user.language" value="en"/>
-    <property name="JOB_BASE_NAME" value="02.Unit Test"/>
-    <property name="BUILD_DISPLAY_NAME" value="#6"/>
+    <property name="JOB_BASE_NAME" value="01.Analyze Code"/>
+    <property name="BUILD_DISPLAY_NAME" value="#36"/>
     <property name="sun.boot.library.path" value="/home/TranTTB/jdk1.7.0_80/jre/lib/amd64"/>
     <property name="java.version" value="1.7.0_80"/>
     <property name="user.timezone" value="America/New_York"/>
@@ -39,10 +39,9 @@
     <property name="GEM_ROOT" value="/opt/rubies/jruby-9.0.0.0/lib/ruby/gems/shared"/>
     <property name="TERM" value="xterm"/>
     <property name="SSH_TTY" value="/dev/pts/0"/>
-    <property name="ProjectKey" value="demo"/>
     <property name="NLSPATH" value="/usr/dt/lib/nls/msg/%L/%N.cat"/>
     <property name="java.endorsed.dirs" value="/home/TranTTB/jdk1.7.0_80/jre/lib/endorsed"/>
-    <property name="BUILD_ID" value="6"/>
+    <property name="BUILD_ID" value="36"/>
     <property name="sun.cpu.isalist" value=""/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="file.encoding.pkg" value="sun.io"/>
@@ -76,10 +75,11 @@
     <property name="POM_PACKAGING" value="war"/>
     <property name="HOME" value="/root"/>
     <property name="POM_GROUPID" value="fpt.dir"/>
+    <property name="project.build.outputDirectory" value="/home/TranTTB/SampleJob/SourceCode/SampleWebApplication/target/generated-classes/cobertura"/>
     <property name="G_BROKEN_FILENAMES" value="1"/>
     <property name="user.home" value="/root"/>
     <property name="RUBYOPT" value=""/>
-    <property name="BUILD_TAG" value="jenkins-02.Unit Test-6"/>
+    <property name="BUILD_TAG" value="jenkins-01.Analyze Code-36"/>
     <property name="JENKINS_SERVER_COOKIE" value="e514f65db0620df4"/>
     <property name="HUDSON_URL" value="https://10.133.32.55/jenkins2.7.1/"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -93,7 +93,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="maven.home" value="/home/TranTTB/apache-maven-3.3.9"/>
     <property name="java.class.path" value="/root/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven32-agent-1.7.jar:/home/TranTTB/apache-maven-3.3.9/boot/plexus-classworlds-2.5.2.jar:/home/TranTTB/apache-maven-3.3.9/conf/logging"/>
-    <property name="sun.java.command" value="jenkins.maven3.agent.Maven32Main /home/TranTTB/apache-maven-3.3.9 /home/TranTTB/apache-tomcat-8.0.36/webapps/jenkins2.7.1/WEB-INF/lib/remoting-2.59.jar /root/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven32-interceptor-1.7.jar /root/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.7.jar 34207"/>
+    <property name="sun.java.command" value="jenkins.maven3.agent.Maven32Main /home/TranTTB/apache-maven-3.3.9 /home/TranTTB/apache-tomcat-8.0.36/webapps/jenkins2.7.1/WEB-INF/lib/remoting-2.59.jar /root/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven32-interceptor-1.7.jar /root/.jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.7.jar 44124"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="PATH+JDK" value="/home/TranTTB/jdk1.7.0_80/bin"/>
     <property name="RUBY_ROOT" value="/opt/rubies/jruby-9.0.0.0"/>
@@ -107,18 +107,18 @@
     <property name="HUDSON_HOME" value="/root/.jenkins"/>
     <property name="PATH+MAVEN" value="/home/TranTTB/apache-maven-3.3.9/bin"/>
     <property name="RUBY_VERSION" value="2.2.2"/>
-    <property name="BUILD_URL" value="https://10.133.32.55/jenkins2.7.1/job/02.Unit%20Test/6/"/>
+    <property name="BUILD_URL" value="https://10.133.32.55/jenkins2.7.1/job/01.Analyze%20Code/36/"/>
     <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
     <property name="LS_COLORS" value="rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.ext.dirs" value="/home/TranTTB/jdk1.7.0_80/jre/lib/ext:/usr/java/packages/lib/ext"/>
     <property name="user.dir" value="/home/TranTTB/SampleJob/SourceCode/SampleWebApplication"/>
-    <property name="JOB_URL" value="https://10.133.32.55/jenkins2.7.1/job/02.Unit%20Test/"/>
+    <property name="JOB_URL" value="https://10.133.32.55/jenkins2.7.1/job/01.Analyze%20Code/"/>
     <property name="line.separator" value="&#10;"/>
     <property name="MAVEN_HOME" value="/home/TranTTB/apache-maven-3.3.9"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
-    <property name="BUILD_NUMBER" value="6"/>
+    <property name="BUILD_NUMBER" value="36"/>
     <property name="JENKINS_URL" value="https://10.133.32.55/jenkins2.7.1/"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="LANG" value="en_US.UTF-8"/>
@@ -130,11 +130,11 @@
     <property name="USER" value="root"/>
     <property name="XFILESEARCHPATH" value="/usr/dt/app-defaults/%L/Dt"/>
   </properties>
-  <testcase name="UT_33_testFindByUsernameExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.064"/>
+  <testcase name="UT_33_testFindByUsernameExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.076"/>
   <testcase name="UT_37_testFindAll" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
   <testcase name="UT_39_testDelete" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
-  <testcase name="UT_35_testFindByIdExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.002"/>
-  <testcase name="UT_38_testDeleteById" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.002"/>
+  <testcase name="UT_35_testFindByIdExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
+  <testcase name="UT_38_testDeleteById" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
   <testcase name="UT_36_testFindByIdNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
-  <testcase name="UT_34_testFindByUsernameNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.002"/>
+  <testcase name="UT_34_testFindByUsernameNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
 </testsuite>
