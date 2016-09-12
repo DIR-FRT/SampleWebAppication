@@ -97,7 +97,7 @@ public class UserRepositoryTest {
   }
 
   @Test
-  public void UT_8_testFindByUsernameExist() {
+  public void UT_435_testFindByUsernameExist() {
 
     AppUser newUser;
 
