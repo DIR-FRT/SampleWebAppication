@@ -58,6 +58,30 @@ public class UserServiceTest {
   }
 
   @Test
+  public void UT_33_testFindByUsernameExist() {
+
+    AppUser newUser;
+
+    newUser = userService.findByUsernameAndActiveTrue("admin");
+
+    assertEquals("admin", newUser.getUsername());
+
+  }
+
+  @Test
+  public void UT_34_testFindByUsernameNotExist() {
+
+    AppUser newUser;
+
+    when(userService.findByUsernameAndActiveTrue("nothuman")).thenReturn(null);
+
+    newUser = userService.findByUsernameAndActiveTrue("nothuman");
+
+    assertNull(newUser);
+
+  }
+  
+  @Test
   public void UT_35_testFindByIdExist() {
 
     AppUser oldUser;
@@ -85,45 +109,18 @@ public class UserServiceTest {
     assertNull(newUser);
 
   }
-
+  
   @Test
-  public void UT_33_testFindByUsernameExist() {
+  public void UT_37_testFindAll() {
 
-    AppUser newUser;
+    when(userResponsitory.findAll()).thenReturn(users);
 
-    newUser = userService.findByUsernameAndActiveTrue("admin");
+    users = userService.findAll();
 
-    assertEquals("admin", newUser.getUsername());
+    assertNotNull(users);
 
   }
-
-  @Test
-  public void UT_34_testFindByUsernameNotExist() {
-
-    AppUser newUser;
-
-    when(userService.findByUsernameAndActiveTrue("nothuman")).thenReturn(null);
-
-    newUser = userService.findByUsernameAndActiveTrue("nothuman");
-
-    assertNull(newUser);
-
-  }
-
-  @Test
-  public void UT_39_testDelete() {
-
-    AppUser checkUser;
-    AppUser check;
-
-    checkUser = userService.findByUsernameAndActiveTrue("admin");
-
-    check = userService.delete(checkUser);
-
-    assertNull(check);
-
-  }
-
+  
   @Test
   public void UT_38_testDeleteById() {
 
@@ -139,16 +136,18 @@ public class UserServiceTest {
     assertNull(check);
 
   }
-
+  
   @Test
-  public void UT_37_testFindAll() {
+  public void UT_39_testDelete() {
 
-    when(userResponsitory.findAll()).thenReturn(users);
+    AppUser checkUser;
+    AppUser check;
 
-    users = userService.findAll();
+    checkUser = userService.findByUsernameAndActiveTrue("admin");
 
-    assertNotNull(users);
+    check = userService.delete(checkUser);
+
+    assertNull(check);
 
   }
-
 }

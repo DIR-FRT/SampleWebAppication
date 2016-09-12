@@ -14,7 +14,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 destroy-method="close">
 <property name="driverClassName" value="org.postgresql.Driver" />
-<property name="url" value="jdbc:postgresql://10.133.32.55:5432/accounts" />
+<property name="url" value="jdbc:postgresql://10.133.28.205:5432/accounts" />
 <property name="username" value="postgres" />
 <property name="password" value="" />
 </bean>

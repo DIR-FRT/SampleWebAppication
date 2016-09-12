@@ -50,26 +50,15 @@ public class UserRepositoryTest {
   }
 
   @Test
-  public void UT_23_testSave() {
-
-    AppUser checkUser;
-
-    checkUser = userRepository.findByUsernameAndActiveTrue("admin");
-
-    if (checkUser != null) {
-
-      userRepository.delete(checkUser.getId());
-
-    }
+  public void UT_17_testFindByUsernameNotExist() {
 
     AppUser newUser;
 
-    newUser = userRepository.save(user);
+    newUser = userRepository.findByUsernameAndActiveTrue("nothuman");
 
-    assertNotNull(newUser);
+    assertNull(newUser);
 
   }
-
   @Test
   public void UT_18_testFindByIdExist() {
 
@@ -96,45 +85,19 @@ public class UserRepositoryTest {
 
   }
 
-  @Test
-  public void UT_435_testFindByUsernameExist() {
+  public void UT_20_testFindAll() {
 
-    AppUser newUser;
-
-    newUser = userRepository.findByUsernameAndActiveTrue("admin");
-
-    assertEquals("admin", newUser.getUsername());
-
-  }
-
-  @Test
-  public void UT_17_testFindByUsernameNotExist() {
-
-    AppUser newUser;
-
-    newUser = userRepository.findByUsernameAndActiveTrue("nothuman");
-
-    assertNull(newUser);
-
-  }
-
-  @Test
-  public void UT_22_testDelete() {
-
-    AppUser checkUser;
-
-    checkUser = userRepository.findByUsernameAndActiveTrue("admin");
-
-    if (checkUser == null) {
-
-      checkUser = userRepository.save(user);
-      
-
-    }
-
-    userRepository.delete(checkUser);
+    users = userRepository.findAll();
     
-    assertNull(userRepository.findByIdAndActiveTrue(checkUser.getId()));
+    if (users == null){
+      
+      userRepository.save(user);      
+      
+    }
+      
+    users = userRepository.findAll();
+
+    assertNotNull(users);
 
   }
   
@@ -157,22 +120,56 @@ public class UserRepositoryTest {
     assertNull(userRepository.findByIdAndActiveTrue(checkUser.getId()));
 
   }
-  
+
   @Test
-  public void UT_20_testFindAll() {
+  public void UT_22_testDelete() {
 
-    users = userRepository.findAll();
-    
-    if (users == null){
+    AppUser checkUser;
+
+    checkUser = userRepository.findByUsernameAndActiveTrue("admin");
+
+    if (checkUser == null) {
+
+      checkUser = userRepository.save(user);
       
-      userRepository.save(user);      
-      
+
     }
-      
-    users = userRepository.findAll();
 
-    assertNotNull(users);
+    userRepository.delete(checkUser);
+    
+    assertNull(userRepository.findByIdAndActiveTrue(checkUser.getId()));
 
   }
 
+  @Test
+  public void UT_23_testSave() {
+
+    AppUser checkUser;
+
+    checkUser = userRepository.findByUsernameAndActiveTrue("admin");
+
+    if (checkUser != null) {
+
+      userRepository.delete(checkUser.getId());
+
+    }
+
+    AppUser newUser;
+
+    newUser = userRepository.save(user);
+
+    assertNotNull(newUser);
+
+  }
+  
+  @Test
+  public void UT_435_testFindByUsernameExist() {
+
+    AppUser newUser;
+
+    newUser = userRepository.findByUsernameAndActiveTrue("admin");
+
+    assertEquals("admin", newUser.getUsername());
+
+  }
 }
