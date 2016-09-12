@@ -85,6 +85,7 @@ public class UserRepositoryTest {
 
   }
 
+  @Test
   public void UT_20_testFindAll() {
 
     users = userRepository.findAll();
