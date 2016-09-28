@@ -108,7 +108,11 @@
 			<version>${servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>javax.el-api</artifactId>
@@ -161,9 +165,9 @@
 			<version>1.7.7</version>
 		</dependency>
 		<dependency>
- 			 <groupId>org.slf4j</groupId>
-  			 <artifactId>slf4j-jdk14</artifactId>
-    			 <version>1.7.7</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+			<version>1.7.7</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -218,8 +222,35 @@
 						,
 						<include>**/*.java</include>
 					</includes>
+					<excludes>
+						<exclude>**/*IntegrationTest.java</exclude>
+					</excludes>
 					<argLine>-XX:-UseSplitVerifier</argLine>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+					<includes>
+						<include>**/*IntegrationTest.java</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<id>integration-test</id>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>verify</id>
+						<goals>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -258,5 +289,5 @@
 			</testResource>
 		</testResources>
 	</build>
-	
+
 </project>

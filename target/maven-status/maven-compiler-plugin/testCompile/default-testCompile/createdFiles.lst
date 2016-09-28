@@ -1,2 +1,3 @@
-fpt/dir/sampleweb/repository/UserRepositoryTest.class
-fpt/dir/sampleweb/service/UserServiceTest.class
+fpt\dir\sampleweb\batchtest\UserIntegrationTest.class
+fpt\dir\sampleweb\service\UserServiceTest.class
+fpt\dir\sampleweb\repository\UserRepositoryTest.class

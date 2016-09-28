@@ -1,5 +1,6 @@
 package fpt.dir.sampleweb.repository;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
@@ -83,7 +84,7 @@ public class UserRepositoryTest {
     assertNull(newUser);
 
   }
-    
+
   @Test
   public void UT_20_testFindAll() {
 
@@ -159,6 +160,17 @@ public class UserRepositoryTest {
     newUser = userRepository.save(user);
 
     assertNotNull(newUser);
+
+  }
+  
+  @Test
+  public void UT_435_testFindByUsernameExist() {
+
+    AppUser newUser;
+
+    newUser = userRepository.findByUsernameAndActiveTrue("admin");
+
+    assertEquals("admin", newUser.getUsername());
 
   }
 }

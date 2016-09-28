@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: fpt.dir.sampleweb.repository.UserRepositoryTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.187 sec - in fpt.dir.sampleweb.repository.UserRepositoryTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.792 sec - in fpt.dir.sampleweb.repository.UserRepositoryTest
