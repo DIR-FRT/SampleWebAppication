@@ -1,8 +1,10 @@
 package fpt.dir.sampleweb.batchtest;
 
 import org.junit.Before;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
@@ -39,6 +41,7 @@ import fpt.dir.sampleweb.service.UserService;
 @ContextConfiguration(locations = { "classpath:appconfig-data.xml", "classpath:appconfig-mvc.xml",
 		"classpath:appconfig-security.xml" })
 @WebAppConfiguration
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserIntegrationTest {
 	private MockMvc mockMvc;
 	private RequestBuilder requestBuilder = null;
@@ -55,17 +58,17 @@ public class UserIntegrationTest {
 	}
 
 	@Test
-	public void loginView() throws Exception {
+	public void IT_865_Login_View() throws Exception {
 		requestBuilder = MockMvcRequestBuilders.get("/login");
 		mockMvc.perform(requestBuilder).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.view().name("login"));
 	}
 
 	@Test
-	public void createUser() throws Exception {
-		requestBuilder = MockMvcRequestBuilders.get("/userList");
+	public void IT_866_Create_User() throws Exception {
+		requestBuilder = MockMvcRequestBuilders.get("/login");
 		mockMvc.perform(requestBuilder).andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(MockMvcResultMatchers.view().name("userList"));
+				.andExpect(MockMvcResultMatchers.view().name("login"));
 
 		requestBuilder = MockMvcRequestBuilders.get("/registration");
 		mockMvc.perform(requestBuilder).andExpect(MockMvcResultMatchers.status().isOk())
@@ -78,7 +81,7 @@ public class UserIntegrationTest {
 	}
 
 	@Test
-	public void editUser() throws Exception {
+	public void IT_867_Edit_User() throws Exception {
 		requestBuilder = MockMvcRequestBuilders.get("/userList");
 		mockMvc.perform(requestBuilder).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.view().name("userList"));
@@ -96,7 +99,7 @@ public class UserIntegrationTest {
 	}
 
 	@Test
-	public void deleteUser() throws Exception {
+	public void IT_868_Delete_User() throws Exception {
 		requestBuilder = MockMvcRequestBuilders.get("/userList");
 		mockMvc.perform(requestBuilder).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.view().name("userList"));
