@@ -25,7 +25,7 @@
 	
 	 <bean id="csvWritter" class="org.springframework.batch.item.file.FlatFileItemWriter">
 		<!-- write to this csv file -->
-		<property name="resource" value="file:////home/TranTTB/SampleJob/IT" />
+		<property name="resource" value="file:////home/TranTTB/SampleJob/IT/AllUsers.csv" />
 		<property name="shouldDeleteIfExists" value="true" />
 		<property name="lineAggregator">
 		  <bean
