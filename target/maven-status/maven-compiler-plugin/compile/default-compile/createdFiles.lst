@@ -1,9 +1,13 @@
-fpt\dir\sampleweb\repository\UserRepository.class
+fpt\dir\sampleweb\batch\ImportAppUser.class
 fpt\dir\sampleweb\service\UserService.class
+fpt\dir\sampleweb\repository\UserRepository.class
 fpt\dir\sampleweb\service\UserServiceImpl.class
 fpt\dir\sampleweb\service\UserDetailsServiceImpl.class
+fpt\dir\sampleweb\main\Batch.class
+fpt\dir\sampleweb\batch\ExportAppUser.class
 fpt\dir\sampleweb\model\Role.class
 fpt\dir\sampleweb\web\UserController.class
 fpt\dir\sampleweb\validator\UserValidator.class
+fpt\dir\sampleweb\main\ReportFieldSetMapper.class
 fpt\dir\sampleweb\model\AppUser.class
 fpt\dir\sampleweb\repository\RoleRepository.class

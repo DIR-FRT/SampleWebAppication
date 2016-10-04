@@ -1,0 +1,47 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:batch="http://www.springframework.org/schema/batch"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/batch
+		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<import resource="appconfig-data.xml" />
+	<import resource="appconfig-mvc.xml" />
+	<import resource="appconfig-security.xml" />
+	<import resource="appconfig-batch.xml" />
+	<bean id="appUser" class="fpt.dir.sampleweb.model.AppUser" scope="prototype" />
+
+	<batch:job id="autoRegister">
+	  <batch:step id="step33" >
+		<batch:tasklet allow-start-if-complete="true" start-limit="1000" transaction-manager="transactionManager">
+			<batch:chunk reader="exportAppUser" writer="csvWritter" commit-interval="1">
+			</batch:chunk>
+		</batch:tasklet>
+	  </batch:step>
+	</batch:job>
+	
+ <bean id="completionPolicy" class="org.springframework.batch.repeat.policy.DefaultResultCompletionPolicy"/> 
+	
+	 <bean id="csvWritter" class="org.springframework.batch.item.file.FlatFileItemWriter">
+		<!-- write to this csv file -->
+		<property name="resource" value="file:////home/TranTTB/SampleJob/IT" />
+		<property name="shouldDeleteIfExists" value="true" />
+		<property name="lineAggregator">
+		  <bean
+			class="org.springframework.batch.item.file.transform.DelimitedLineAggregator">
+			<property name="delimiter" value="," />
+			<property name="fieldExtractor">
+			  <bean
+				class="org.springframework.batch.item.file.transform.BeanWrapperFieldExtractor">
+				<property name="names" value="username,password,email" />
+			   </bean>
+			</property>
+		   </bean>
+		</property>
+	  </bean>
+	
+  <bean id="exportAppUser"
+	class="fpt.dir.sampleweb.batch.ExportAppUser">
+  </bean>
+</beans>

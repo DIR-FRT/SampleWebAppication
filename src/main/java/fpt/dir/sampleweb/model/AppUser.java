@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * This class represents <i>User</i> object
@@ -21,6 +23,7 @@ import javax.persistence.Transient;
  */
 @Entity
 @Table(name = "app_user")
+@XmlRootElement(name = "record")
 public class AppUser {
 
   private Long id;
@@ -58,6 +61,7 @@ public class AppUser {
   * @return String This returns user name
   * @version 1.0
   */
+  @XmlAttribute(name = "username")
   public String getUsername() {
     return username;
   }
@@ -77,6 +81,7 @@ public class AppUser {
   * @return String This returns password
   * @version 1.0
   */
+  @XmlAttribute(name = "password")
   public String getPassword() {
     return password;
   }
@@ -139,6 +144,7 @@ public class AppUser {
    * @return String This returns email
    * @version 1.0
    */
+  @XmlAttribute(name = "email")
   public String getEmail() {
     return email;
   }
@@ -170,5 +176,11 @@ public class AppUser {
   public void setActive(Boolean active) {
     this.active = active;
   }
+
+@Override
+public String toString() {
+	return "AppUser [id=" + id + ", username=" + username + ", password=" + password + ", passwordConfirm="
+			+ passwordConfirm + ", email=" + email + ", active=" + active + ", roles=" + roles + "]";
+}
 
 }

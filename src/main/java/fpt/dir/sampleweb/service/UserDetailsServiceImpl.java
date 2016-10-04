@@ -43,7 +43,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     AppUser user = userRepository.findByUsernameAndActiveTrue(username);
 
-    Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+    Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
     
     for (Role role : user.getRoles()) {
       
