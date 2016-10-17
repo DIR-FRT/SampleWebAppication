@@ -2,13 +2,12 @@
 	xmlns:batch="http://www.springframework.org/schema/batch"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/batch
-		http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+		http://www.springframework.org/schema/batch/spring-batch.xsd
 		http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="appconfig-data.xml" />
 	<import resource="appconfig-mvc.xml" />
-	<import resource="appconfig-security.xml" />
 	<import resource="appconfig-batch.xml" />
 	<bean id="appUser" class="fpt.dir.sampleweb.model.AppUser" scope="prototype" />
 

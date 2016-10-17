@@ -20,11 +20,12 @@
 		</batch:tasklet>
 	  </batch:step>
 	</batch:job>
+	
  <bean id="completionPolicy" class="org.springframework.batch.repeat.policy.DefaultResultCompletionPolicy"/> 
 	
 	 <bean id="csvWritter" class="org.springframework.batch.item.file.FlatFileItemWriter">
 		<!-- write to this csv file -->
-		<property name="resource" value="file:///D:/Work/anc.csv" />
+		<property name="resource" value="file:////home/TranTTB/SampleJob/IT/AllUsers.csv" />
 		<property name="shouldDeleteIfExists" value="true" />
 		<property name="lineAggregator">
 		  <bean

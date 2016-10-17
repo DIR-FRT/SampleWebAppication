@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="fpt.dir.sampleweb.service.UserServiceTest" time="0.096" tests="7" errors="0" skipped="0" failures="0">
+<testsuite name="fpt.dir.sampleweb.service.UserServiceTest" time="0.307" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_25\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 7"/>
-    <property name="classworlds.conf" value="D:\Work\workspace_news\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7511158858294536973.tmp"/>
+    <property name="classworlds.conf" value="D:\Work\workspace_news\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf1406405652623080619.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_25\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\ImageMagick-7.0.1-Q16;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Java\jdk1.7.0_25\bin;D:\Source\apache-maven-3.3.9\bin;C:\Program Files\PuTTY;C:\Program Files\Git\cmd;C:\Program Files\TortoiseSVN\bin;D:\Source\ImageMagick-6.8.5\bin;C:\Program Files\McAfee\Solidcore\Tools\GatherInfo;C:\Program Files\McAfee\Solidcore\Tools\Scanalyzer;C:\Program Files\McAfee\Solidcore\;C:\Program Files\McAfee\Solidcore\Tools\ScGetCerts;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Source\geckodriver-v0.9.0-win64\geckodriver.exe;C:\RailsInstaller\Git\cmd;C:\RailsInstaller\Ruby2.2.0\bin;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -43,7 +43,7 @@
     <property name="java.vm.specification.version" value="1.7"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_25\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -60,11 +60,11 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="UT_33_testFindByUsernameExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.087"/>
+  <testcase name="UT_33_testFindByUsernameExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.301"/>
   <testcase name="UT_37_testFindAll" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
   <testcase name="UT_39_testDelete" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
   <testcase name="UT_35_testFindByIdExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.002"/>
-  <testcase name="UT_38_testDeleteById" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.002"/>
-  <testcase name="UT_36_testFindByIdNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.003"/>
-  <testcase name="UT_34_testFindByUsernameNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0"/>
+  <testcase name="UT_38_testDeleteById" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
+  <testcase name="UT_36_testFindByIdNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0"/>
+  <testcase name="UT_34_testFindByUsernameNotExist" classname="fpt.dir.sampleweb.service.UserServiceTest" time="0.001"/>
 </testsuite>
