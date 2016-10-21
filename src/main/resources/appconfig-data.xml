@@ -38,7 +38,6 @@ class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 <context:annotation-config />
 
 <bean id="userDetailsServiceImpl" class="fpt.dir.sampleweb.service.UserDetailsServiceImpl"></bean>
-<bean id="userService" class="fpt.dir.sampleweb.service.UserServiceImpl"></bean>
 
 <bean id="encoder"
 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">

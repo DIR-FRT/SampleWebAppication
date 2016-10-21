@@ -26,7 +26,6 @@
 		<checkstyle.version>2.9.1</checkstyle.version>
 		<surefire.reportplugin.version>2.12.4</surefire.reportplugin.version>
 		<cobertura.version>2.5.2</cobertura.version>
-		<spring.batch.version>3.0.0.RELEASE</spring.batch.version>
 	</properties>
 
 	<dependencies>
@@ -109,11 +108,7 @@
 			<version>${servlet.version}</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>javax.el</groupId>
 			<artifactId>javax.el-api</artifactId>
@@ -166,34 +161,10 @@
 			<version>1.7.7</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-jdk14</artifactId>
-			<version>1.7.7</version>
+ 			 <groupId>org.slf4j</groupId>
+  			 <artifactId>slf4j-jdk14</artifactId>
+    			 <version>1.7.7</version>
 		</dependency>
-		<!-- Spring Batch dependencies -->
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-core</artifactId>
-			<version>${spring.batch.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-infrastructure</artifactId>
-			<version>${spring.batch.version}</version>
-		</dependency>
-
-		<!-- Spring Batch unit test -->
-		<dependency>
-			<groupId>org.springframework.batch</groupId>
-			<artifactId>spring-batch-test</artifactId>
-			<version>${spring.batch.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-oxm</artifactId>
-			<version>4.2.0.RELEASE</version>
-		</dependency>
-
 	</dependencies>
 	<build>
 		<plugins>
@@ -247,89 +218,13 @@
 						,
 						<include>**/*.java</include>
 					</includes>
-					<excludes>
-						<exclude>**/*IntegrationTest.java</exclude>
-					</excludes>
 					<argLine>-XX:-UseSplitVerifier</argLine>
 				</configuration>
 			</plugin>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-failsafe-plugin</artifactId> 
-				<version>2.12</version> <configuration> <includes> <include>**/*IntegrationTest.java</include> 
-				</includes> </configuration> <executions> <execution> <id>integration-test</id> 
-				<goals> <goal>integration-test</goal> </goals> </execution> <execution> <id>verify</id> 
-				<goals> <goal>verify</goal> </goals> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.10.3</version>
-			</plugin>
-			<!-- download source code in Eclipse, best practice -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>false</downloadJavadocs>
-				</configuration>
-			</plugin>
-
-			<!-- Set a compiler level -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
-				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
-				</configuration>
-			</plugin>
-
-			<!-- Make this jar executable -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>compile</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<excludes>
-								<exclude>**/log4j.properties</exclude>
-							</excludes>
-							<archive>
-								<manifest>
-									<addClasspath>true</addClasspath>
-									<mainClass>fpt.dir.sampleweb.main.Batch</mainClass>
-									<classpathPrefix>dependency-jars/</classpathPrefix>
-								</manifest>
-							</archive>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-			<!-- Copy project dependency -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.10</version>
-				<executions>
-					<execution>
-						<id>copy-dependencies</id>
-						<phase>package</phase>
-						<goals>
-							<goal>copy-dependencies</goal>
-						</goals>
-						<configuration>
-							<!-- exclude junit, we need runtime dependency only -->
-							<includeScope>runtime</includeScope>
-							<outputDirectory>${project.build.directory}/dependency-jars/</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 		<!-- Add this directly after the <build>-opening tag -->
@@ -363,5 +258,5 @@
 			</testResource>
 		</testResources>
 	</build>
-
+	
 </project>

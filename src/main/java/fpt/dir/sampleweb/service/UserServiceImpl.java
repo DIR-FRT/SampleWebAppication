@@ -73,26 +73,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<AppUser> findAll() {
 
-    List<AppUser> users = userRepository.findByActiveTrue();
-    AppUser user;
-    
-    Iterator<AppUser> iUser = users.iterator();
-    
-    while (iUser.hasNext()) {
-      
-      user = iUser.next();
-      
-      for (Role role : user.getRoles()) {
-              
-        if ( "ROLE_ADMIN".equals(role.getName()) ) {
-          
-          iUser.remove();
-          
-        }
-        
-      }
-       
-    }
+    List<AppUser> users = userRepository.findAll();
     
     return users;
 

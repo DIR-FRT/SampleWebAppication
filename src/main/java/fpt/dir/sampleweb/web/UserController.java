@@ -127,7 +127,7 @@ public class UserController {
    * @return logout
    * @version 1.0
    */
-  @RequestMapping(value = { "/userList" }, method = RequestMethod.GET)
+  @RequestMapping(value = { "/" }, method = RequestMethod.GET)
   public String userList(Model model) {
 
     List<AppUser> users = userService.findAll();
@@ -135,19 +135,6 @@ public class UserController {
     model.addAttribute("userList", users);
 
     return "userList";
-
-  }
-
-  /**
-   * This method is used to redirect to home
-   * 
-   * @return home
-   * @version 1.0
-   */
-  @RequestMapping(value = { "/" }, method = RequestMethod.GET)
-  public String home() {
-
-    return "home";
 
   }
 

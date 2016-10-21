@@ -23,6 +23,16 @@
 </style>
 </head>
 <body class=".container-fluid">
+<div class="panel-logout">
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+			User : ${pageContext.request.userPrincipal.name} | <a id="logout"
+				href="javascript:formSubmit()"> Logout</a>
+	</c:if>
+	</div>
+<div>
+	<h2>ユーザ管理（CI基盤：サンプルWeb）</h2>
+	
+</div>
 	<c:url value="/j_spring_security_logout" var="logoutUrl" />
 	<form:form action="${logoutUrl}" method="post" id="logoutForm">
 		<input type="hidden" name="${_csrf.parameterName}"
@@ -33,21 +43,11 @@
 			document.getElementById("logoutForm").submit();
 		}
 	</script>
-
-	<c:if test="${pageContext.request.userPrincipal.name != null}">
-		<h2>
-			User : ${pageContext.request.userPrincipal.name} | <a id="logout"
-				href="javascript:formSubmit()"> Logout</a>
-		</h2>
-	</c:if>
 	<div class="container myrow-container">
 		<div class="panel panel-success">
 			<div class="panel-heading">
-				<div align="left">
-					<h3 class="panel-title">
-						<b>Manage Users</b>
-					</h3>
-				</div>
+				<div class="panel-title">ユーザ一覧</div>
+				<div class="panel-register"><a href="registration">新規ユーザ作成</a></div>
 			</div>
 			<div class="panel-body">
 				<c:if test="${empty userList}">
@@ -59,9 +59,10 @@
 						<thead style="background-color: #bce8f1;">
 							<tr>
 								<th>Id</th>
-								<th>Name</th>
-								<th>Email</th>
-								<th colspan="2">Action</th>
+								<th>ユーザ名</th>
+								<th>メールアドレス</th>
+								<th class="text-center">ステータス</th>
+								<th colspan="2">操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -70,10 +71,18 @@
 									<th><c:out value="${user.id}" /></th>
 									<th><c:out value="${user.username}" /></th>
 									<th><c:out value="${user.email}" /></th>
+									<th class="text-center">
+										<c:if test="${user.active == true}">
+											Enabled
+										</c:if>
+										<c:if test="${user.active == false}">
+											Disabled
+										</c:if>
+									</th>
 									<th><a id="editUser"
-										href="editUser?id=<c:out value='${user.id}'/>">Edit</a></th>
+										href="editUser?id=<c:out value='${user.id}'/>">編集</a></th>
 									<th><a id="disableUser"
-										href="deleteUser?id=<c:out value='${user.id}'/>">Disable</a></th>
+										href="deleteUser?id=<c:out value='${user.id}'/>">無効化する</a></th>
 								</tr>
 							</c:forEach>
 						</tbody>
