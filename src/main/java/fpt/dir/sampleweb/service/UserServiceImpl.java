@@ -10,7 +10,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -73,7 +72,7 @@ public class UserServiceImpl implements UserService {
   @Override
   public List<AppUser> findAll() {
 
-    List<AppUser> users = userRepository.findAll();
+    List<AppUser> users = userRepository.findAllByOrderByIdAsc();
     
     return users;
 
@@ -102,6 +101,43 @@ public class UserServiceImpl implements UserService {
     userRepository.save(user);
 
     return userRepository.findByIdAndActiveTrue(user.getId());
+  }
+
+  @Override
+  public AppUser disable(long id) {
+	  
+	  AppUser user = new AppUser();
+	  
+	  user = userRepository.findById(id);
+	  user.setActive(false);
+	  userRepository.save(user);
+
+	  return userRepository.findByIdAndActiveTrue(user.getId());
+  }
+
+  @Override
+  public AppUser enable(long id) {
+
+	  AppUser user = new AppUser();
+	  
+	  user = userRepository.findById(id);
+	  user.setActive(true);
+	  userRepository.save(user);
+
+	  return userRepository.findByIdAndActiveFalse(user.getId());
+	  
+  }
+
+  @Override
+  public AppUser findByEmailAndIdNot(String email, long id) {
+
+	  return userRepository.findByEmailAndIdNot(email, id);
+	  
+  }
+
+  @Override
+  public AppUser findByEmail(String email) {
+	  return userRepository.findByEmail(email);
   }
 
 }

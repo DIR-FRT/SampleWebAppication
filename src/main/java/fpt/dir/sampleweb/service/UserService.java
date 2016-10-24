@@ -41,13 +41,31 @@ public interface UserService {
   AppUser findByUsernameAndActiveTrue(String username);
   
   /**
+   * This method is used to get AppUser by email for editing account
+   * 
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser findByEmailAndIdNot(String email, long id);
+  
+  /**
+   * This method is used to get AppUser by email for creating account
+   * 
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser findByEmail(String email);
+  
+  /**
   * This method is used to get all AppUser
   * 
   * @return List AppUser List
   * @version 1.0
   */
   List<AppUser> findAll();
-
+ 
   /**
   * This method is used to get AppUser by id
   * 
@@ -78,10 +96,28 @@ public interface UserService {
   /**
   * This method is used to delete user
   * 
-  * @param id
+  * @param user
   * @return AppUser object
   * @version 1.0
   */
   AppUser delete(AppUser user);
-  
+
+  /**
+   * This method is used to disable user
+   * 
+   * @param id
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser disable(long id);
+
+  /**
+   * This method is used to enable user
+   * 
+   * @param id
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser enable(long id);
+
 }

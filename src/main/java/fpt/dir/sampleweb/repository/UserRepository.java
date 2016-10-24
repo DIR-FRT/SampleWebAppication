@@ -55,11 +55,46 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
   AppUser findByIdAndActiveTrue(long id);
 
   /**
+   * This method will get deactivate user by id
+   * 
+   * @param id
+   * @return AppUser object
+   * @version 1.0
+   */
+   AppUser findByIdAndActiveFalse(long id);
+   
+  /**
   * This method will get user by name
   * @param username
   * @return AppUser object
   * @version 1.0
   */
   AppUser findByUsername(String username);
+
+  /**
+   * This method will get all user and order by id Asc
+   * @param username
+   * @return List<AppUser>
+   * @version 1.0
+   */
+  List<AppUser> findAllByOrderByIdAsc();
+
+  /**
+   * This method will get user by email for editing account
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+ * @param id 
+   */
+  AppUser findByEmailAndIdNot(String email, long id);
+
+  /**
+   * This method will get user by email for creating account
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+ * @param id 
+   */
+  AppUser findByEmail(String email);
 
 }

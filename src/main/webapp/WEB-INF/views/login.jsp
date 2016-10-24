@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -29,22 +28,22 @@
 <div class="container">
     <form method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading">ログイン</h2>
-
-        <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>       	
          	<label>ユーザ名</label>
-            <input type="text" id="username" name="username" class="form-control"
-                   autofocus></input>
+         	<div class="form-group ${error != null ? 'has-error' : ''}">
+	            <input type="text" id="username" name="username" class="form-control"
+	                   autofocus></input>
+            </div>
             <label>パスワード</label>
-            <input type="password" id="password" name="password" class="form-control"/>
-            <span>${error}</span>
+            <div class="form-group ${error != null ? 'has-error' : ''}">
+	            <input type="password" id="password" name="password" class="form-control"/>
+	            <span>${error}</span>
+            </div>
             <input type="hidden" name="${_csrf.parameterName}" id="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-            <button class="btn btn-lg btn-primary btn-block" id="login" type="submit">ログイン</button>
-        </div>
-
+			<div class="text-center">
+            	<button class="btn btn-lg btn-primary btn-block" id="login" type="submit">ログイン</button>
+            </div>
     </form>
-
 </div>
 <!-- /container -->
 <script src="${contextPath}/resources/js/jquery.min.js"></script>

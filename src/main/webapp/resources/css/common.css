@@ -42,6 +42,10 @@ body {
     border-bottom-left-radius: 0;
 }
 
+.form-signin .backlink {
+    margin-top: 50px;
+}
+
 .form-signin button {
     margin-top: 20px;
 }

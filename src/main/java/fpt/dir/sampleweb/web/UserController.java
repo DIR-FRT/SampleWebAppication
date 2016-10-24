@@ -75,7 +75,7 @@ public class UserController {
     // securityService.autologin(userForm.getUsername(),
     // userForm.getPasswordConfirm());
 
-    return "redirect:/login";
+    return "redirect:/";
     
   }
 
@@ -93,13 +93,13 @@ public class UserController {
 
     if (error != null) {
       
-      model.addAttribute("error", "Your username and password is invalid.");
+      model.addAttribute("error", "ユーザネームおよびパスワードが間違ました。");
       
     }
       
     if (logout != null) {
       
-      model.addAttribute("message", "You have been logged out successfully.");
+      model.addAttribute("message", "ログアウト成功！");
       
     }
 
@@ -124,7 +124,7 @@ public class UserController {
    * This method is used to show list user
    * 
    * @param model
-   * @return logout
+   * @return userList
    * @version 1.0
    */
   @RequestMapping(value = { "/" }, method = RequestMethod.GET)
@@ -167,7 +167,7 @@ public class UserController {
   @RequestMapping(value = "/editUser", method = RequestMethod.POST)
   public String edit(@ModelAttribute("userForm") AppUser userForm, BindingResult bindingResult) {
 
-    AppUser user = userService.findByIdAndActiveTrue(userForm.getId());
+    AppUser user = userService.findById(userForm.getId());
     
     userForm.setUsername(user.getUsername());
     
@@ -181,22 +181,37 @@ public class UserController {
 
     userService.save(userForm);
 
-    return "redirect:/userList";
+    return "redirect:/";
     
   }
 
   /**
-   * This method is used to delete user
+   * This method is used to disable user
    * 
    * @return redirect:/userList
    * @version 1.0
    */
-  @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
-  public String deleteUser(@RequestParam long id, Model model) {
+  @RequestMapping(value = "/disableUser", method = RequestMethod.GET)
+  public String disableUser(@RequestParam long id, Model model) {
 
-    userService.delete(id);
+    userService.disable(id);
 
-    return "redirect:/userList";
+    return "redirect:/";
+
+  }
+  
+  /**
+   * This method is used to enable user
+   * 
+   * @return redirect:/userList
+   * @version 1.0
+   */
+  @RequestMapping(value = "/enableUser", method = RequestMethod.GET)
+  public String enableUser(@RequestParam long id, Model model) {
+
+    userService.enable(id);
+
+    return "redirect:/";
 
   }
 

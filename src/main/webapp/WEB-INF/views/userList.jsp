@@ -9,7 +9,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Users List</title>
 
 <!-- Bootstrap CSS -->
@@ -25,13 +24,12 @@
 <body class=".container-fluid">
 <div class="panel-logout">
 	<c:if test="${pageContext.request.userPrincipal.name != null}">
-			User : ${pageContext.request.userPrincipal.name} | <a id="logout"
-				href="javascript:formSubmit()"> Logout</a>
+			ユーザ : ${pageContext.request.userPrincipal.name} | <a id="logout"
+				href="javascript:formSubmit()"> ログアウト</a>
 	</c:if>
 	</div>
 <div>
 	<h2>ユーザ管理（CI基盤：サンプルWeb）</h2>
-	
 </div>
 	<c:url value="/j_spring_security_logout" var="logoutUrl" />
 	<form:form action="${logoutUrl}" method="post" id="logoutForm">
@@ -73,16 +71,27 @@
 									<th><c:out value="${user.email}" /></th>
 									<th class="text-center">
 										<c:if test="${user.active == true}">
-											Enabled
+											<div>有効</div>
 										</c:if>
 										<c:if test="${user.active == false}">
-											Disabled
+											<div class="text-danger">無効</div>
 										</c:if>
 									</th>
-									<th><a id="editUser"
-										href="editUser?id=<c:out value='${user.id}'/>">編集</a></th>
-									<th><a id="disableUser"
-										href="deleteUser?id=<c:out value='${user.id}'/>">無効化する</a></th>
+									<th>
+										<a id="editUser" href="editUser?id=<c:out value='${user.id}'/>">編集</a>
+									</th>
+									<th>
+										<c:if test="${pageContext.request.userPrincipal.name != user.username}">
+											<c:choose >
+												<c:when test="${user.active == true}">
+													<a id="disableUser" href="disableUser?id=<c:out value='${user.id}'/>">無効化する</a>
+												</c:when>
+												<c:when test="${user.active == false}">
+													<a id="enableUser" href="enableUser?id=<c:out value='${user.id}'/>">有効化する</a>
+												</c:when>
+											</c:choose>
+										</c:if>
+									</th>
 								</tr>
 							</c:forEach>
 						</tbody>

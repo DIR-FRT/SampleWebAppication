@@ -109,6 +109,7 @@ public class UserValidator implements Validator {
     validatePasswordConfirmIsMatched(user, errors);
     validateEmailIsEmpty(errors);
     validateEmailIsValid(user, errors);
+    validateEmailIsExist(user, errors);
     
   }
 
@@ -126,6 +127,37 @@ public class UserValidator implements Validator {
   public void validateEmailIsEmpty(Errors errors) {
 
     ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
+
+  }
+  
+  /**
+   * This function's used to check the email is existed.<br>
+   * Reject an {@link Errors errors} if {@link AppUser#getUsername()} is not
+   * null
+   * 
+   * @param errors
+   *            contextual state about the validation process
+   * @param user
+   *            the object that is to be validated, in here it's
+   *            {@link AppUser}
+   * @see Errors
+   */
+  public void validateEmailIsExist(AppUser user, Errors errors) {
+
+	  if(user.getId() == null){
+		  
+		  if (userService.findByEmail(user.getEmail()) != null) {
+
+		      errors.rejectValue("email", "Duplicate.userForm.email");
+		      
+		  }
+		      
+	  }
+	  else if (userService.findByEmailAndIdNot(user.getEmail(), user.getId()) != null) {
+
+	      errors.rejectValue("email", "Duplicate.userForm.email");
+
+	    }
 
   }
 
@@ -251,7 +283,7 @@ public class UserValidator implements Validator {
   }
 
   /**
-   * This function's used to check the username is existeds.<br>
+   * This function's used to check the username is existed.<br>
    * Reject an {@link Errors errors} if {@link AppUser#getUsername()} is not
    * null
    * 

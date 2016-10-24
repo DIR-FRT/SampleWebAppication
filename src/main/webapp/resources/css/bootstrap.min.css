@@ -3738,8 +3738,7 @@ a.btn.disabled, fieldset[disabled] a.btn {
 }
 
 .btn-block {
-    display: block;
-    width: 100%
+    width: 50%;
 }
 
 .btn-block + .btn-block {
@@ -5876,10 +5875,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-title {
-    padding: 5px;
     font-size: 16px;
-    color: inherit;
-    background-color: #d0e8bb;
     width: 90px;    
 }
 
@@ -5888,12 +5884,9 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-register {
-	margin-top: -32px;
+	margin-top: -20px;
 	float: right;
-    padding: 5px;
     font-size: 16px;
-    color: inherit;
-    background-color: #d0e8bb;
     width: 125px;
     font-weight: bold;   
 }
