@@ -18,9 +18,9 @@ public class ExportAppUser implements ItemReader<AppUser> {
 
 	private List<AppUser> users;
 	private Integer index = 0;
+	
 	@Override
 	public AppUser read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-		// TODO Auto-generated method stub
 		return getNextAppUser();
 	}
 	

@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import fpt.dir.sampleweb.main.ReportFieldSetMapper;
 import fpt.dir.sampleweb.model.AppUser;
 import fpt.dir.sampleweb.service.UserService;
 

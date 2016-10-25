@@ -28,7 +28,6 @@
 		<cobertura.version>2.5.2</cobertura.version>
 		<spring.batch.version>3.0.0.RELEASE</spring.batch.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>

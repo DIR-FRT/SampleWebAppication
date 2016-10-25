@@ -37,13 +37,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
    * @return UserDetails object
    * @version 1.0
    */
-  @Override
   @Transactional(readOnly = true)
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
     AppUser user = userRepository.findByUsernameAndActiveTrue(username);
 
-    Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+    Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
     
     for (Role role : user.getRoles()) {
       
