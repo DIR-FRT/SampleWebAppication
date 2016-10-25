@@ -35,6 +35,14 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
   * @version 1.0
   */
   List<AppUser> findByActiveTrue();
+  
+  /**
+   * This method will get all users are not deleted
+   * 
+   * @return List AppUser List 
+   * @version 1.0
+   */
+  List<AppUser> findByDeletedFalseOrderByIdAsc();
 
   /**
   * This method will get active user by name
@@ -44,6 +52,15 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
   * @version 1.0
   */
   AppUser findByUsernameAndActiveTrue(String username);
+  
+  /**
+   * This method will get active user is not deleted by name
+   * 
+   * @param username
+   * @return AppUser object
+   * @version 1.0
+   */
+   AppUser findByUsernameAndActiveTrueAndDeletedFalse(String username);
   
   /**
   * This method will get active user by id
@@ -62,6 +79,25 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
    * @version 1.0
    */
    AppUser findByIdAndActiveFalse(long id);
+   
+   /**
+    * This method will get user is not deleted by id
+    * 
+    * @param id
+    * @return AppUser object
+    * @version 1.0
+ * @param username 
+    */
+   AppUser findByUsernameAndDeletedFalse(String username);
+   
+   /**
+    * This method will get deleted user by id
+    * 
+    * @param id
+    * @return AppUser object
+    * @version 1.0
+    */
+   AppUser findByIdAndDeletedTrue(Long id);
    
   /**
   * This method will get user by name
@@ -84,7 +120,7 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
    * @param email
    * @return AppUser object
    * @version 1.0
- * @param id 
+   * @param id 
    */
   AppUser findByEmailAndIdNot(String email, long id);
 
@@ -93,8 +129,17 @@ public interface UserRepository extends JpaRepository<AppUser, Long> {
    * @param email
    * @return AppUser object
    * @version 1.0
- * @param id 
+   * @param id 
    */
   AppUser findByEmail(String email);
+
+  /**
+   * This method will get user by email for creating account
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+   * @param id 
+   */
+  AppUser findByEmailAndDeletedFalse(String email);
 
 }

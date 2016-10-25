@@ -29,6 +29,7 @@ public class AppUser {
   private String passwordConfirm;
   private String email;
   private Boolean active = true;
+  private Boolean deleted = false;
   private Set<Role> roles;
 
   /**
@@ -169,6 +170,25 @@ public class AppUser {
    */
   public void setActive(Boolean active) {
     this.active = active;
+  }
+  
+  /**
+   * This method is used to get deleted
+   * 
+   * @return Boolean This returns deleted
+   * @version 1.0
+   */
+  public Boolean getDeleted() {
+    return deleted;
+  }
+
+  /**
+   * This method is used to set deleted
+   * 
+   * @version 1.0
+   */
+  public void setDeleted(Boolean deleted) {
+    this.deleted = deleted;
   }
 
 }

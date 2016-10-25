@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
 
     Set<Role> roles = new HashSet<Role>();
 
-    roles.add(roleRepository.findById(1));
+    roles.add(roleRepository.findById(2));
 
     user.setRoles(roles);
 
@@ -79,28 +79,44 @@ public class UserServiceImpl implements UserService {
   }
   
   @Override
+  public List<AppUser> findByDeletedFalse() {
+
+    List<AppUser> users = userRepository.findByDeletedFalseOrderByIdAsc();
+    
+    return users;
+
+  }
+  
+  @Override
+  public AppUser findByUsernameAndDeletedFalse(String username) {
+	  
+	  return userRepository.findByUsernameAndDeletedFalse(username);
+	  
+  }
+  
+  @Override
   public AppUser delete(long id) {
 
     AppUser user = new AppUser();
 
     user = userRepository.findById(id);
 
-    user.setActive(false);
+    user.setDeleted(true);
 
     userRepository.save(user);
 
-    return userRepository.findByIdAndActiveTrue(user.getId());
+    return userRepository.findByIdAndDeletedTrue(user.getId());
 
   }
 
   @Override
   public AppUser delete(AppUser user) {
 
-    user.setActive(false);
+    user.setDeleted(false);
 
     userRepository.save(user);
 
-    return userRepository.findByIdAndActiveTrue(user.getId());
+    return userRepository.findByIdAndDeletedTrue(user.getId());
   }
 
   @Override
@@ -137,7 +153,16 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public AppUser findByEmail(String email) {
+	  
 	  return userRepository.findByEmail(email);
+	  
+  }
+
+  @Override
+	public AppUser findByEmailAndDeletedFalse(String email) {
+	  
+	  return userRepository.findByEmailAndDeletedFalse(email);
+	  
   }
 
 }

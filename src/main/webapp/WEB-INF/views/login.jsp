@@ -28,7 +28,7 @@
 <div class="container">
     <form method="POST" action="${contextPath}/login" class="form-signin">
         <h2 class="form-heading">ログイン</h2>
-            <span>${message}</span>       	
+        	<div><span>${message}</span></div>
          	<label>ユーザ名</label>
          	<div class="form-group ${error != null ? 'has-error' : ''}">
 	            <input type="text" id="username" name="username" class="form-control"

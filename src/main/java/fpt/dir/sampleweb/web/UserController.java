@@ -130,7 +130,7 @@ public class UserController {
   @RequestMapping(value = { "/" }, method = RequestMethod.GET)
   public String userList(Model model) {
 
-    List<AppUser> users = userService.findAll();
+    List<AppUser> users = userService.findByDeletedFalse();
 
     model.addAttribute("userList", users);
 
@@ -191,6 +191,21 @@ public class UserController {
    * @return redirect:/userList
    * @version 1.0
    */
+  @RequestMapping(value = "/deleteUser", method = RequestMethod.GET)
+  public String deleteUser(@RequestParam long id, Model model) {
+
+    userService.delete(id);
+
+    return "redirect:/";
+
+  }
+  
+  /**
+   * This method is used to disable user
+   * 
+   * @return redirect:/userList
+   * @version 1.0
+   */
   @RequestMapping(value = "/disableUser", method = RequestMethod.GET)
   public String disableUser(@RequestParam long id, Model model) {
 
@@ -212,29 +227,6 @@ public class UserController {
     userService.enable(id);
 
     return "redirect:/";
-
-  }
-
-  /**
-   * This method is used to validate error 403
-   * 
-   * @return 403
-   * @version 1.0
-   */
-  @RequestMapping(value = "/403", method = RequestMethod.GET)
-  public String accesssDenied(Model model) {
-
-    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
-    if (!(auth instanceof AnonymousAuthenticationToken)) {
-
-      UserDetails userDetail = (UserDetails) auth.getPrincipal();
-
-      model.addAttribute("username", userDetail.getUsername());
-
-    }
-
-    return "403";
 
   }
 

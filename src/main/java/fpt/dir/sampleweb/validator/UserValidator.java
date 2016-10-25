@@ -146,7 +146,7 @@ public class UserValidator implements Validator {
 
 	  if(user.getId() == null){
 		  
-		  if (userService.findByEmail(user.getEmail()) != null) {
+		  if (userService.findByEmailAndDeletedFalse(user.getEmail()) != null) {
 
 		      errors.rejectValue("email", "Duplicate.userForm.email");
 		      
@@ -296,7 +296,7 @@ public class UserValidator implements Validator {
    */
   public void validateUsernameIsDuplicate(AppUser user, Errors errors) {
 
-    if (userService.findByUsernameAndActiveTrue(user.getUsername()) != null) {
+    if (userService.findByUsernameAndDeletedFalse(user.getUsername()) != null) {
 
       errors.rejectValue("username", "Duplicate.userForm.username");
 

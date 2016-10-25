@@ -12,7 +12,6 @@
         <intercept-url pattern="/editUser" access="hasRole('ROLE_ADMIN')"/>
         <intercept-url pattern="/deleteUser" access="hasRole('ROLE_ADMIN')"/>
         <!-- access denied page -->
-    <access-denied-handler error-page="/403" />
     <form-login login-page="/login" default-target-url="/"
     	authentication-failure-url="/login?error" 
     	username-parameter="username" password-parameter="password"/>

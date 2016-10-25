@@ -41,6 +41,15 @@ public interface UserService {
   AppUser findByUsernameAndActiveTrue(String username);
   
   /**
+   * This method is used to get AppUser is not deleted by user name
+   * 
+   * @param username
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser findByUsernameAndDeletedFalse(String username);
+  
+  /**
    * This method is used to get AppUser by email for editing account
    * 
    * @param email
@@ -48,6 +57,15 @@ public interface UserService {
    * @version 1.0
    */
   AppUser findByEmailAndIdNot(String email, long id);
+  
+  /**
+   * This method is used to get AppUser by email for creating account
+   * 
+   * @param email
+   * @return AppUser object
+   * @version 1.0
+   */
+  AppUser findByEmailAndDeletedFalse(String email);
   
   /**
    * This method is used to get AppUser by email for creating account
@@ -65,6 +83,14 @@ public interface UserService {
   * @version 1.0
   */
   List<AppUser> findAll();
+  
+  /**
+   * This method is used to get all AppUser not deleted
+   * 
+   * @return List AppUser List
+   * @version 1.0
+   */
+  List<AppUser> findByDeletedFalse();
  
   /**
   * This method is used to get AppUser by id

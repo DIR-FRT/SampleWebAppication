@@ -60,7 +60,7 @@
 								<th>ユーザ名</th>
 								<th>メールアドレス</th>
 								<th class="text-center">ステータス</th>
-								<th colspan="2">操作</th>
+								<th colspan="3">操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -90,6 +90,11 @@
 													<a id="enableUser" href="enableUser?id=<c:out value='${user.id}'/>">有効化する</a>
 												</c:when>
 											</c:choose>
+										</c:if>
+									</th>
+									<th>
+										<c:if test="${pageContext.request.userPrincipal.name != user.username}">
+											<a id="deleteUser" href="deleteUser?id=<c:out value='${user.id}'/>">削除します</a>
 										</c:if>
 									</th>
 								</tr>

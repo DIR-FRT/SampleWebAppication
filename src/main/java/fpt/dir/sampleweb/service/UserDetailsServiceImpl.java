@@ -40,7 +40,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   @Transactional(readOnly = true)
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-    AppUser user = userRepository.findByUsernameAndActiveTrue(username);
+    AppUser user = userRepository.findByUsernameAndActiveTrueAndDeletedFalse(username);
 
     Set<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
     
