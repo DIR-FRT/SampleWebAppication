@@ -7,10 +7,6 @@ import fpt.dir.sampleweb.validator.UserValidator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -93,13 +89,13 @@ public class UserController {
 
     if (error != null) {
       
-      model.addAttribute("error", "ユーザネームおよびパスワードが間違ました。");
+      model.addAttribute("error", "ユーザ名、パスワードが違います。");
       
     }
       
     if (logout != null) {
       
-      model.addAttribute("message", "ログアウト成功！");
+      model.addAttribute("message", "ログアウトしました。");
       
     }
 

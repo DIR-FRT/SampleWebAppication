@@ -44,7 +44,7 @@
         </spring:bind>
 
         <spring:bind path="password">
-        	<label>パスワード（8文字以上～３２文字以内）</label>
+        	<label>パスワード（8文字以上～32文字以内）</label>
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="password" path="password" class="form-control" autofocus="true"></form:input>
                 <form:errors path="password"></form:errors>

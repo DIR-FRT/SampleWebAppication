@@ -36,7 +36,7 @@
     <form:form method="POST" modelAttribute="userForm" class="form-signin">
         <h2 class="form-signin-heading text-center">新規ユーザ作成</h2>
         <spring:bind path="username">
-        	<label>ユーザ名（6文字以上～３２文字以内）</label>
+        	<label>ユーザ名（6文字以上～32文字以内）</label>
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="text" path="username" class="form-control" autofocus="true"></form:input>
                 <form:errors path="username"></form:errors>
@@ -44,7 +44,7 @@
         </spring:bind>
 
         <spring:bind path="password">
-        	<label>パスワード（8文字以上～３２文字以内）</label>
+        	<label>パスワード（8文字以上～32文字以内）</label>
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="password" path="password" class="form-control"></form:input>
                 <form:errors path="password"></form:errors>
